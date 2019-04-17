@@ -16,7 +16,7 @@ volumeOfCylinder length radius = areaOfCircle radius * length
 
 -- get the distance between two points x1, y2, x2, y2
 distance :: Float -> Float -> Float -> Float -> Float
-distance x1 y1 x2 y2 = sqrt ( sqrt (x2 - x1) + sqrt (y2 - y1) )
+distance x1 y1 x2 y2 = sqrt ( (x2 - x1)^2 + (y2 - y1)^2 )
 
 -- function returns true iff all of its three arguments are all different from on another
 threeDifferent :: Int -> Int -> Int -> Bool
