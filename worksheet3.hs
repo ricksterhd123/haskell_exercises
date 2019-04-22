@@ -69,19 +69,33 @@ validDate :: Int -> Int -> Bool
 validDate day month = day >= 1 && day <= daysInMonth month
 
 sumNumbers :: Int -> Int
-sumNumbers n
-    | n > 0 = n + sumNumbers (n - 1)
-    | otherwise = 0
+-- sumNumbers n
+--     | n > 0 = n + sumNumbers (n - 1)
+--     | otherwise = 0
+
+-- without guards:
+sumNumbers 0 = 0
+sumNumbers n = n + sumNumbers (n - 1)
 
 sumSquares :: Int -> Int
-sumSquares n
-    | n > 0 = n^2 + sumSquares (n - 1)
-    | otherwise = 0
+
+-- sumSquares n
+--     | n > 0 = n^2 + sumSquares (n - 1)
+--     | otherwise = 0
+
+-- without guards
+sumSquares 0 = 0
+sumSquares n = n^2 + sumSquares (n - 1)
 
 power :: Int -> Int -> Int
-power n m
-    | m > 0 = n * power n (m - 1)
-    | otherwise = 1
+
+-- power n m
+--     | m > 0 = n * power n (m - 1)
+--     | otherwise = 1
+
+-- without guards
+power n 0 = 1
+power n m = n * power n (m - 1)
 
 sumFromTo :: Int -> Int -> Int
 sumFromTo lower upper
@@ -92,3 +106,8 @@ gcd :: Int -> Int -> Int
 gcd a b
     | b > 0 = gcd b (a `mod` b)
     | otherwise = a
+
+intSquareRoot :: Int -> Int
+intSquareRoot x
+    | x >= 1 = floor (sqrt (fromIntegral x))
+    | otherwise = error "Undefined for zero or negative integers"
