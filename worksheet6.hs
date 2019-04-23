@@ -69,6 +69,6 @@ zeroToTenNew lst = filter (\x -> x >= 0 && x <= 10) lst
 mult10New :: [Int] -> [Int]
 mult10New lst = foldr (\x y -> (x * 10) : y) [] lst
 
---reverse :: [a] -> [a]
--- reverse lst = foldr (\x (y:ys) -> y : head ys : ys) lst lst
+reverse :: [a] -> [a]
+reverse lst = foldr (\x (y:ys) -> y : head ys : ys) lst lst
 -- onlyLowerCase :: String -> String
